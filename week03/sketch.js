@@ -8,7 +8,7 @@ function setup() {
     var ts = 70;
     
     textSize(ts);
-    textStyle("ITALIC");
+    textStyle(ITALIC);
     textFont("Giorgia");
     
     
@@ -21,7 +21,7 @@ function setup() {
     linenumber = linenumber + 1
     
     
-    textStyle("ITALIC");
+    
     text("The", x, y + ts*linenumber);
     linenumber = linenumber + 1
       text("hair of", x, y + ts*linenumber);
