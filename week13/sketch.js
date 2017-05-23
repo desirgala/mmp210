@@ -1,36 +1,38 @@
-var r1, r2, r3, r4;
- 
+// Final
+var e1, e2, e3, e4;
+
+//var ellipse = (56, 46, 55, 55);
 function setup() {
   createCanvas(710, 400);
   fill(255, 200);
   noStroke();
-  r1 = new Mellipset(1, 134.0, 0.532, 0.1*height, 10.0, 60.0);
-  r2 = new Mellipse(2, 44.0, 0.166, 0.3*height, 5.0, 50.0);
-  r3 = new Mellipse(2, 58.0, 0.332, 0.4*height, 10.0, 35.0);
-  r4 = new Mellipse(1, 120.0, 0.0498, 0.9*height, 15.0, 60.0);
+  e1 = new Ellipse(156, 46, 15, -70, 100, 25);
+  e2 = new Ellipse(120, 44, 5, -70, 100, 25);
+  e3 = new Ellipse(160, 38, 11, -70, 100, 25);
+  e4 = new Ellipse(250, 33, 8, -70, 100, 25);
 }
  
 function draw() {
   background(0);
   
-  r1.display();
-  r2.display();
-  r3.display();
-  r4.display();
+  e1.display();
+  e2.display();
+  e3.display();
+  e4.display();
  
-  r1.move(mouseX-(width/4), mouseY+(height*0.1), 15);
-  r2.move((mouseX+(width*0.05))%width, mouseY+(height*0.025), 20);
-  r3.move(mouseX/2, mouseY-(height*0.025), 40);
-  r4.move(mouseX-(width/2), (height-mouseY), 50);
+  e1.move(mouseX-(width/2), mouseY+(height), 15);
+  e2.move((mouseX+(width))%width, mouseY, 20);
+  e3.move(mouseX/2, mouseY-(height), 40);
+  e4.move(mouseX-(width/2), (height-mouseY), 50);
 }
  
-function Mellipse(iw, ixp, ih, iyp, id, it) {
-  this.w = iw; // single bar width
-  this.xpos = ixp; // rect xposition
-  this.h = ih; // rect height
-  this.ypos = iyp; // rect yposition
-  this.d = id; // single bar distance
-  this.t = it; // number of bars
+function Ellipse(w, x, h, y, d, n) {
+  this.w = w; // single bar width
+  this.xpos = x; // e xposition
+  this.h = h; // e height
+  this.ypos = y; // e yposition
+  this.d = d; // single e distance
+  this.t = n; // number of e
 
   this.move = function(posX, posY, damping) {
     var dif = this.ypos - posY;
@@ -44,9 +46,12 @@ function Mellipse(iw, ixp, ih, iyp, id, it) {
   }
 
   this.display = function() {
-    for (var i=0; i<this.t; i++) {
-      ellipse(this.xpos+(i*(this.d+this.w)), 
-        this.ypos, this.w, height*this.h);
+    for (var i=1; i<= this.t; i++) {
+      ellipse(
+          this.xpos+(i+(this.d)), 
+        this.ypos, 
+          this.w, 
+          height+this.h);
     }
   }
 }

@@ -27,7 +27,7 @@ function setup() {
             // rain
             if (y < height/6) {
                 // random rain blue color
-                r = random(5, 200);
+                r = random(55, 200);
                 g = random(50, 255);
                 b = random(200, 255);
                 //random rain size and position
@@ -42,7 +42,7 @@ function setup() {
                 w = h = random(10, 100);
             } else {
                 // random green grass color
-                r = random(10, 200);
+                r = random(100, 200);
                 g = random(10, 250);
                 b = random(100, 200);
             }
