@@ -1,18 +1,22 @@
 // animation
 
-var x = 10;
-var y = 10;
-
-var update = 2;
+var x = 40;
+var y = 45;
+var sz = 40;
+var update = 4;
 
 function setup() {
     createCanvas (640, 480);
 }
 
 function draw() {
-    background(200);
+    background(93, 179, 255);
     
-    ellipse(x, y, 50);
+    
+    noStroke();
+    fill("pink");
+    
+    triangle(x, y, -sz, y + sz, x + sz, y + sz);
     x+= update;
     
     if ( frameCount % 60 ==0) {
@@ -22,13 +26,11 @@ function draw() {
     }
     
     
-    if (x > width/2){
-        x = 0;
+    if (x > width || x <= 5){
+        x = update; 
     }
     
-    if (x > width/2){
-        y--;
-    } else {
-        y++;
-    }
+    // debugging
+    fill("green");
+    ellipse(x, y, 10);
 }

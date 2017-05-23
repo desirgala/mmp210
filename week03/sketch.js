@@ -4,6 +4,9 @@ function setup() {
     createCanvas(640, 480);
     background(145, 93, 32);
     
+    fill('none');
+    stroke('black');
+    rec(20,33.44,55, 66);
     //ts means text size
     var ts = 70;
     
@@ -11,9 +14,9 @@ function setup() {
     textStyle(ITALIC);
     textFont("Giorgia");
     
-    
-    //rect(320, 240, 70, 12);
-    
+    function (){
+    rect(320, 240, 70, 12);
+    }
     var y =50;
     var x =220;
   
